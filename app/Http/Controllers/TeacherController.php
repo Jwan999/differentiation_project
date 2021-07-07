@@ -30,6 +30,10 @@ class TeacherController extends Controller
     public function differentiate()
     {
         $groups = Group::all();
+        foreach ($groups as $group) {
+            $group->project_id = null;
+            $group->save();
+        }
         $groups = $groups->sortByDesc("average");
         $taken = [];
         $assignedGroups = [];

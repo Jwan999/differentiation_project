@@ -90,22 +90,23 @@
                     <div class="d-flex flex-column justify-content-start mt-2">
                         <div id="projects" class="col-md-3 col-12">
                             <div id="projects-select-container">
-
-                                <select class="form-select mt-2" name="projects[]">
-                                    @foreach(\App\Models\Project::all() as $project)
-                                        <option value="{{$project->id}}">{{$project->name}}</option>f
-                                    @endforeach
-                                </select>
+                                @foreach(\App\Models\Project::all() as $project)
+                                    <select class="form-select mt-2" name="projects[]">
+                                        @foreach(\App\Models\Project::all() as $project)
+                                            <option value="{{$project->id}}">{{$project->name}}</option>
+                                        @endforeach
+                                    </select>
+                                @endforeach
                             </div>
 
                         </div>
 
-                        <div class="col-auto">
-                            <button type="button" class="btn btn btn-secondary mt-4" onclick="addNewProject()">Add
-                                Project
-                            </button>
+                        {{--                        <div class="col-auto">--}}
+                        {{--                            <button type="button" class="btn btn btn-secondary mt-4" onclick="addNewProject()">Add--}}
+                        {{--                                Project--}}
+                        {{--                            </button>--}}
 
-                        </div>
+                        {{--                        </div>--}}
 
                     </div>
                 </div>

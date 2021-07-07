@@ -33,7 +33,7 @@ class ProjectController extends Controller
 
         Project::create($data);;
 
-        return redirect('/teacher/marks',)->withSuccess('تم التسجيل بنجاح');
+        return redirect('/',)->withSuccess('تم التسجيل بنجاح');
     }
 
 }
