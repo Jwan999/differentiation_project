@@ -11,17 +11,20 @@ class Group extends Model
 
     protected $appends = ["average"];
     protected $guarded;
-protected $with = ["project"];
+    protected $with = ["project"];
+
     public function projects()
     {
         return $this->belongsToMany(Project::Class);
     }
-public function project(){
+
+    public function project()
+    {
         return $this->belongsTo(Project::Class);
-}
+    }
+
     public function getAverageAttribute()
     {
-
         $marks = [
             $this->{"student_1_grade"},
             $this->{"student_2_grade"},

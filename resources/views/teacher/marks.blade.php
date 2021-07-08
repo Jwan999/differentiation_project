@@ -9,11 +9,13 @@
                 <ul class="list-group mt-4">
                     <li class="list-group-item d-flex justify-content-between">
                         <div>
-                            <p class="fs-5 fw-light">
-                                <b>Group #{{$group->id}}</b>
+                            <p class="fw-light">
+                                {{--                                <b>Group #{{$group->id}}</b>--}}
+                                <b class="fs-5 ">Group Name:</b> {{$group->group_name}}
                                 <br>
-                                <b>Group Name:</b> {{$group->group_name}}
+
                             </p>
+{{--                        @dd($groups)--}}
                             <div class="ma-0 list-unstyled row">
                                 @for($i = 1; $i<5;$i++)
                                     <div class="col-md-3 mb-3">

@@ -24,7 +24,7 @@ class TeacherController extends Controller
             $group->save();
         }
 
-        return redirect('/teacher/marks',)->withSuccess('تم تحةيث الدرجات بنجاح');
+        return redirect('/teacher/marks',)->withSuccess('تم تحديث الدرجات بنجاح');
     }
 
     public function differentiate()
@@ -34,6 +34,7 @@ class TeacherController extends Controller
             $group->project_id = null;
             $group->save();
         }
+//        dd($groups->sortByDesc("average"));
         $groups = $groups->sortByDesc("average");
         $taken = [];
         $assignedGroups = [];
