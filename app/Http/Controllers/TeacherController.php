@@ -34,7 +34,7 @@ class TeacherController extends Controller
             $group->project_id = null;
             $group->save();
         }
-//        dd($groups->sortByDesc("average"));
+
         $groups = $groups->sortByDesc("average");
         $taken = [];
         $assignedGroups = [];
@@ -55,6 +55,7 @@ class TeacherController extends Controller
                 }
             }
         }
+
         $groups = Group::all();
         return view("projects.projects", ["groups" => $groups]);
     }

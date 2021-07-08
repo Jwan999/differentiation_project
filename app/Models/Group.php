@@ -15,7 +15,7 @@ class Group extends Model
 
     public function projects()
     {
-        return $this->belongsToMany(Project::Class);
+        return $this->belongsToMany(Project::Class)->withPivot("order")->orderByPivot("order","asc");
     }
 
     public function project()
